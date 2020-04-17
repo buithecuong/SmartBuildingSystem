@@ -146,6 +146,7 @@ for(Cookie cookie : cookies){
   <a href="#about">About</a>
   <a href="#room">Class Rooms</a>
   <a href="contact.html">Contact</a>
+  <a href="realtime_chart.html">Temperature Realtime</a>
   <a href="temperature_history.jsp">Temperature History</a>
 </div>
 
