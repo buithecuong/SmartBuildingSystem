@@ -1,0 +1,391 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@1.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #0078d7;
+        }
+
+        #voltage_container {
+            background-color: white;
+            height: 400px;
+        }
+
+        #current_container {
+            background-color: white;
+            height: 400px;
+        }
+
+        /*
+        * Navbar
+        */
+
+        .navbar-brand {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, .25);
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+        }
+
+        .navbar .form-control {
+            padding: .75rem 1rem;
+            border-width: 0;
+            border-radius: 0;
+        }
+
+        .form-control-dark {
+            color: #fff;
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .1);
+        }
+
+        .form-control-dark:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+        }
+
+        .dropdown-menu {
+            width: 250px !important;
+        }
+
+        .battery {
+            position: relative;
+            margin: 0 auto;
+            width: 150px;
+            height: 250px;
+            left: 0;
+        }
+
+        .outer {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            width: 100px;
+            height: 200px;
+            border: 7px solid #393E41;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .cap {
+            width: 50px;
+            height: 4px;
+            border: 10px solid #393E41;
+            border-bottom: none;
+            position: absolute;
+            border-radius: 5px;
+            left: 50px;
+            top: 13px;
+        }
+
+        .inner {
+            position: absolute;
+            bottom: 0px;
+            left: -2px;
+            width: 90px;
+            height: 20px;
+            background-color: #71FB85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Room B109</a>
+        <input class="form-control form-control-dark w-70" type="text" placeholder="Search" aria-label="Search">
+        
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Temperature Plotting Container -->
+
+            <div id="temp_container" class="col-sm-5" 
+                 style="margin-left:5%;margin-top: 65px; background-color: white;">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="dropdown" style="float: right; padding: 10px;">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Temperature
+                            </button>
+                            <div class="dropdown-menu" style="padding: 10px;" class="temperature">
+                                <input type="checkbox" aria-label="Checkbox for following text input"
+                                    id="System_Highest_Temperature" class="tempcheck" value="sys_highest_cell_temperature_oC_signed" checked>
+                                <label style="width: 90%;" for="system_Highest_Temperature">System
+                                        Highest Temperature</label>
+                                
+                                <input type="checkbox" aria-label="Checkbox for following text input"
+                                    id="System_Lowest_Temperature" class="tempcheck" value="sys_lowest_cell_temperature_oC_signed" checked>
+                                <label style="width: 90%;" for="System_Lowest_Temperature">System
+                                        Lowest Temperature</label>
+                                
+                                <input type="checkbox" aria-label="Checkbox for following text input"
+                                    id="Bmu_1_Highest_Temperature" class="tempcheck" value="bmu_1_highest_single_str_temperature_oC">
+                                <label style="width: 90%;" for="Bmu_1_highest_Temperature">BMU 1
+                                        Highest Temperature</label>
+                                
+                                <input type="checkbox" aria-label="Checkbox for following text input"
+                                    id="Bmu_1_Lowest_Temperature" class="tempcheck" value="bmu_1_lowest_single_str_temperature_oC">
+                                <label style="width: 90%;" for="Bmu_1_Lowest_Temperature">BMU1
+                                        Lowest Temperature</label>
+                                
+                                
+                                <!-- <div class="custom-control custom-checkbox" style="margin: 0 5px;">
+                                    <input type="checkbox" class="custom-control-input temperature"
+                                        id="System_Temperature" checked>
+                                    <label class="custom-control-label" for="System_Temperature">System
+                                        Temperature</label>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" style="height: 350px;">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        /* GLOBAL VARIABLE */
+        var result = {} // Dictionary returned from IP.
+        var voltSelected = [] // List of selected checkbox from voltage dropdown.
+        var currSelected = [] // List of selected checkbox from voltage dropdown.
+        var tempSelected = [] // List of selected checkbox from voltage dropdown.
+
+        
+        /*
+        function addDataset
+            - Add dataset when some selectes a value from dropdown
+
+        Requires 3 parameters
+            - myChart: Chart on which new value will be plotted.
+            - config: config values of the chart.
+            - label: Label that the new value should have.
+        
+        */
+        function addDataset(myChart, label) {
+
+            var colorName = colorNames[Math.floor((Math.random() * 7) + 1)];
+            var newColor = chartColors[colorName];
+
+            var newDataset = {
+                label: label,
+                backgroundColor: color(newColor).alpha(0.5).rgbString(),
+                borderColor: newColor,
+                fill: false,
+                lineTension: 0,
+                data: []
+            };
+
+            myChart.config.data.datasets.push(newDataset);
+            myChart.update(
+                {
+                    duration: 500,
+                    easing: 'easeOutBounce'
+
+                }
+            );
+        }
+
+        /*
+        function addDatapoint to plot
+            - Adds data point to the plot
+
+        Requires parameters
+            - chartInstance - chart instance on which we add values
+            -
+        */
+
+        function addDatapoint(chart) {
+
+            var cellArray = ['sys_highest_cell_voltage_mV', 'sys_lowest_cell_voltage_mV', 'cell_1_voltage_mV','cell_2_voltage_mV','cell_3_voltage_mV',
+            ,'cell_4_voltage_mV','cell_5_voltage_mV','cell_6_voltage_mV',
+            'cell_7_voltage_mV','cell_8_voltage_mV', 'cell_9_voltage_mV','cell_10_voltage_mV',
+            ,'cell_11_voltage_mV','cell_12_voltage_mV','cell_13_voltage_mV',
+            'cell_14_voltage_mV','cell_15_voltage_mV','cell_16_voltage_mV']
+
+            chart.config.data.datasets.forEach(function (dataset) {
+                // console.log(dataset);
+                if (cellArray.includes(dataset.label)) {
+                    
+                    var mvToV = (result[dataset.label]/1000).toFixed(2)
+                    //console.log(mvToV);
+                    dataset.data.push({
+                        x: Date.now(),
+                        y: mvToV
+                    });
+                }
+                else {
+                    dataset.data.push({
+                        x: Date.now(),
+                        y: result[dataset.label]
+                    });
+                }
+            });
+        }
+
+    </script>
+
+    <!-- All three configs set on a canvas -->
+     <script src="static/js/temperature.js"></script>
+
+    <script>
+
+        /* 
+            Pull all default checked checkbox values.
+        */
+       $('.tempcheck:checked').each(function () {
+
+            var selectedTemp = $(this).val();
+            currSelected.push(selectedTemp);
+
+            addDataset(tempChart, selectedTemp)
+
+        });
+
+        /*
+            Bind click event on checkbox and add call Dataset on each value.
+        */
+       
+        $('.tempcheck').click(function () {
+
+            tempSelected = [];
+            tempChart.config.data.datasets = [];
+
+            $('.tempcheck:checked').each(function () {
+                var selectedTemp = $(this).val();
+
+                tempSelected.push(selectedTemp);
+
+                addDataset(tempChart, selectedTemp)
+            });
+        });
+
+        /*
+        function getVoltageFromResult
+            - returns data point for voltage
+        */
+        function getVoltageFromResult() {
+            return result['system_voltage_V']
+        }
+
+        function putRightValuesInRightCharts(category) {
+
+            if (category == "soc") {
+
+                var soc = parseFloat(result["soc"]);
+
+                // Set the value in front-end
+                setSocHeight(soc);
+            }
+            else if (category == "voltage") {
+
+                if (voltSelected != []) {
+
+                    $.each(voltSelected, function (index, value) {
+                        // console.log(value);
+                        voltage = result[value]
+
+                        // console.log(result)
+
+
+                    });
+
+                }
+
+                // update chart datasets keeping the current animation
+                voltageChart.update({
+                    preservation: true
+                });
+            }
+            else if (category == "current") {
+
+                if (currSelected != []) {
+
+                    $.each(currSelected, function (index, value) {
+                        // console.log(value);
+                        current = result[value]
+
+                        // console.log(result)
+
+
+                    });
+
+                }
+
+                // update chart datasets keeping the current animation
+                currentChart.update({
+                    preservation: true
+                });
+            }
+            else if (category == "temperature") {
+
+                if (tempSelected != []) {
+
+                    $.each(tempSelected, function (index, value) {
+                        // console.log(value);
+                        temperature = result[value]
+
+                        // console.log(result)
+
+
+                    });
+
+                }
+                // update chart datasets keeping the current animation
+                tempChart.update({
+                    preservation: true
+                });
+            }
+
+        }
+        
+        function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+        $(document).ready(function () {
+
+        });
+
+    </script>
+
+</body>
+
+</html>
