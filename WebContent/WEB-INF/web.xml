@@ -16,6 +16,14 @@
   <servlet-name>EmailServlet</servlet-name>
   <url-pattern>/Email</url-pattern>
   </servlet-mapping>
+  <servlet>  
+<servlet-name>Register</servlet-name>  
+<servlet-class>Register</servlet-class>  
+</servlet>  
+<servlet-mapping>  
+<servlet-name>Register</servlet-name>  
+<url-pattern>/servlet/Register</url-pattern>  
+</servlet-mapping>  
   <display-name>smartcollege</display-name>
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
