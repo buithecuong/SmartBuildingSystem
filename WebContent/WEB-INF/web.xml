@@ -8,6 +8,14 @@
   <servlet-name>LoginServlet</servlet-name>
   <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>Email Servlet</servlet-name>
+  <servlet-class>EmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>EmailServlet</servlet-name>
+  <url-pattern>/Email</url-pattern>
+  </servlet-mapping>
   <display-name>smartcollege</display-name>
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
