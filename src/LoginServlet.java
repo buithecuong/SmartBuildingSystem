@@ -26,7 +26,12 @@ public class LoginServlet extends HttpServlet {
 		String user = request.getParameter("username");
 		String pwd = request.getParameter("pass");
 		
-		if(userID.equals(user) && password.equals(pwd)){
+			
+		//if(userID.equals(user) && password.equals(pwd)){
+		if(Validate.checkUser(user, pwd))
+        {
+            //RequestDispatcher rs = request.getRequestDispatcher("Welcome");
+            //rs.forward(request, response);
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 			//setting session to expiry in 30 mins
@@ -36,12 +41,17 @@ public class LoginServlet extends HttpServlet {
 			//Get the encoded URL string
 			String encodedURL = response.encodeRedirectURL("index.jsp");
 			response.sendRedirect(encodedURL);
-		}else{
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
+        }
+        else
+        {
+           /*out.println("Username or Password incorrect");
+           RequestDispatcher rs = request.getRequestDispatcher("index.html");
+           rs.include(request, response);*/
+        	RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
 			PrintWriter out= response.getWriter();
 			out.println("<font color=red>Either user name or password is wrong.</font>");
 			rd.include(request, response);
-		}
+        }
 
 	}
 

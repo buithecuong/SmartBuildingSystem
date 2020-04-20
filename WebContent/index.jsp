@@ -123,7 +123,6 @@ for(Cookie cookie : cookies){
 %>
 
 
-<!-- Navbar (sit on top) -->
 <div class="w3-top">
 <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <div class="w3-left w3-hide-small" id="main">
@@ -141,14 +140,22 @@ for(Cookie cookie : cookies){
 <br>
 </div>
 
-<div id="mySidenav" class="sidenav">
+   <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#about">About</a>
-  <a href="#room">Class Rooms</a>
+  <a href="#rooms">Class Rooms</a>
   <a href="contact.html">Contact</a>
   <a href="realtime_chart.html">Temperature Realtime</a>
   <a href="temperature_history.jsp">Temperature History</a>
+  <a href="eventlog.jsp">Device Log</a>
+  <a href="temp.jsp">Temp1</a>
+  <a href="temp2.jsp">Temp2</a>
+  <a href="device_config.html">Device Config</a>
+  <a href="TableStatus.jsp">Device Settings Status table</a>
+  <a href="deviceStatus.jsp">Device Settings Status Chart</a>
 </div>
+
+
 
 
 <!-- Header -->
@@ -224,29 +231,29 @@ for(Cookie cookie : cookies){
 
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team2.jpg" alt="Bui" style="width:100%">
+      <img src="static/images/bui.jpg" alt="Bui" style="width:100%">
       <h3>The Cuong Bui</h3>
       <p class="w3-opacity">ABC</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team1.jpg" alt="Sahil" style="width:100%">
+      <img src="static/images/sahil.png" alt="Sahil" style="width:100%">
       <h3>Sahil Rahi</h3>
       <p class="w3-opacity">BCD</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team3.jpg" alt="Harjot" style="width:100%">
+      <img src="static/images/harjot.png" alt="Harjot" style="width:100%">
       <h3>Harjot Kaur</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team4.jpg" alt="Simranpreet" style="width:100%">
-      <h3>Simranpreet Kaur</h3>
+      <img src="static/images/brinderdeep.png" alt="Brinderdeep" style="width:100%">
+      <h3>Brinderdeep Kaur</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
@@ -254,7 +261,7 @@ for(Cookie cookie : cookies){
     
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="/w3images/team4.jpg" alt="Brinderdeep" style="width:100%">
-      <h3>Brinderdeep Kaur</h3>
+      <h3>Simranpreet Kaur</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
@@ -287,7 +294,7 @@ for(Cookie cookie : cookies){
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="Koala" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 <script>
 
