@@ -252,7 +252,7 @@ for(Cookie cookie : cookies){
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/brinderdeep.png" alt="Brinderdeep" style="width:100%">
+      <img src="static/images/brimderdeep.jpg" alt="Brinderdeep" style="width:100%">
       <h3>Brinderdeep Kaur</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
