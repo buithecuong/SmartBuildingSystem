@@ -27,7 +27,6 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("pass");
 		
 			
-		//if(userID.equals(user) && password.equals(pwd)){
 		if(Validate.checkUser(user, pwd))
         {
             //RequestDispatcher rs = request.getRequestDispatcher("Welcome");

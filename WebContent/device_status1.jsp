@@ -6,12 +6,14 @@
 </head>
 <body bgcolor=yellow>
     <%
+	Statement st= null;
+ 	Connection con=(Connection)DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/smartbuilding","admin","Asdf$1234");
     try
     {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con=(Connection)DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/smartbuilding","admin","Asdf$1234");
-        Statement st=con.createStatement();
+       
+        st=con.createStatement();
         ResultSet rs=st.executeQuery("select device_id, temp from device_temp;");
     %><table border=1 align=center style="text-align:center">
       <thead>

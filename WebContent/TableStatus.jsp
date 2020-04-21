@@ -12,7 +12,7 @@
 
         <% 
             Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/smartbuilding", "admin", "Asdf$1234");
+                "jdbc:mysql://35.183.144.230:3306/smartbuilding", "admin", "Asdf$1234");
 
             Statement statement = connection.createStatement() ;
             ResultSet resultset = 

@@ -11,7 +11,7 @@ public class DbConnection {
 		{	
 				Class.forName("com.mysql.jdbc.Driver");  
 				conn=DriverManager.getConnection(  
-				"jdbc:mysql://localhost:3306/smartbuilding","admin","Asdf$1234");  
+				"jdbc:mysql://35.183.144.230:3306/smartbuilding","admin","Asdf$1234");  
 				return conn;
 		}
 		else

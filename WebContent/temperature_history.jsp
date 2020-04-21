@@ -35,7 +35,7 @@
         <%
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            final String host = "jdbc:mysql://localhost/" + "chart";
+            final String host = "jdbc:mysql://35.183.144.230/" + "smartbuilding";
             final Connection conn = DriverManager.getConnection(host, "admin", "Asdf$1234");
             final Statement stmt = conn.createStatement();
             final ResultSet rs = stmt.executeQuery("select date, temp from temperature");
