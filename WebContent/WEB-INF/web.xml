@@ -16,6 +16,14 @@
   <servlet-name>EmailServlet</servlet-name>
   <url-pattern>/Email</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>Feedback Servlet</servlet-name>
+  <servlet-class>FeedbackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>FeedbackServlet</servlet-name>
+  <url-pattern>/Feedback</url-pattern>
+  </servlet-mapping>
   <servlet>  
 <servlet-name>Register User</servlet-name>  
 <servlet-class>Register</servlet-class>  

@@ -148,11 +148,10 @@ for(Cookie cookie : cookies){
   <a href="realtime_chart.html">Temperature Realtime</a>
   <a href="temperature_history.jsp">Temperature History</a>
   <a href="eventlog.jsp">Device Log</a>
-  <a href="temp.jsp">Temp1</a>
-  <a href="temp2.jsp">Temp2</a>
   <a href="device_config.html">Device Config</a>
   <a href="TableStatus.jsp">Device Settings Status table</a>
   <a href="deviceStatus.jsp">Device Settings Status Chart</a>
+  <a href="#feedback">Feedback</a>
 </div>
 
 
@@ -234,28 +233,28 @@ for(Cookie cookie : cookies){
       <img src="static/images/bui.jpg" alt="Bui" style="width:100%">
       <h3>The Cuong Bui</h3>
       <p class="w3-opacity">ABC</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>Email: c0770339@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="static/images/sahil.png" alt="Sahil" style="width:100%">
       <h3>Sahil Rahi</h3>
       <p class="w3-opacity">BCD</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p> Email: C0761268@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="static/images/harjot.png" alt="Harjot" style="width:100%">
       <h3>Harjot Kaur</h3>
       <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>Email: c0757913@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="static/images/brimderdeep.jpg" alt="Brinderdeep" style="width:100%">
       <h3>Brinderdeep Kaur</h3>
       <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>Email: C0761444@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
     
@@ -263,22 +262,22 @@ for(Cookie cookie : cookies){
       <img src="static/images/simranpreet.png" alt="Brinderdeep" style="width:100%">
       <h3>Simranpreet Kaur</h3>
       <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>Email: C0761245@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>
   </div>
 
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+  <div class="w3-container w3-padding-32" id="feedback">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Feedback</h3>
     <p>Lets get in touch and talk about your next project.</p>
-    <form method="post" action="Email">
+    <form method="post" action="Feedback">
       <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
       <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        <i class="fa fa-paper-plane"></i> FEEDBACK MESSAGE
       </button>
     </form>
   </div>
