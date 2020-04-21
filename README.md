@@ -25,5 +25,6 @@ CREATE TABLE IF NOT EXISTS temperature (
     date timestamp  UNIQUE default current_time,
     temp double NOT NULL
 );
-
+Step 2: Open/Import Java EE project SmartBuildingSystem in Eclipse. 
+Step 3: Add library (activation.jar, mail.jar, mysql-connector jar) under WEB-INF-> Lib
 Step 2: at login page, register new user then login
