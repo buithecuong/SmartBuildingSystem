@@ -15,7 +15,7 @@ public class FeedbackServlet extends HttpServlet{
 		String subject = req.getParameter("Subject");
 		String message =req.getParameter("Comment");
 		
-		String [] recepients =new String[]{"c0761268@mylambton.ca,c0770339@mylambton.ca"};
+		String [] recepients =new String[]{"c0761268@mylambton.ca","c0770339@mylambton.ca"};
 		String [] bccRecepients =new String[]{feedbacker};
 		SendEmail email_client = new SendEmail();
 		PrintWriter out =res.getWriter();
