@@ -260,7 +260,7 @@ for(Cookie cookie : cookies){
     </div>
     
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team4.jpg" alt="Brinderdeep" style="width:100%">
+      <img src="static/images/simranpreet.png" alt="Brinderdeep" style="width:100%">
       <h3>Simranpreet Kaur</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
