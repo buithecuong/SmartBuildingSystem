@@ -130,7 +130,8 @@ for(Cookie cookie : cookies){
 	</div>    
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-     User <%=user %>  <br>
+     <img src="static/images/${user}.jpg" alt="${user}" style="width:50px;height: 50px;border-radius: 50%;vertical-align: middle;">
+     <br><%=user %>  <br>
       <form action="<%=response.encodeURL("LogoutServlet") %>" method="post">
 		<input type="submit" value="Logout" >
 		</form>   
@@ -230,40 +231,40 @@ for(Cookie cookie : cookies){
 
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/bui.jpg" alt="Bui" style="width:100%">
+      <img src="static/images/cbui.jpg" alt="cbui" style="width:300px;height: 300px;border-radius: 100%;vertical-align: middle;">
       <h3>The Cuong Bui</h3>
-      <p class="w3-opacity">ABC</p>
+      <p class="w3-opacity">Python, Java Developer</p>
       <p>Email: c0770339@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href="https://www.linkedin.com/in/thecuongbui/" target="_top">LinkedIn </a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/sahil.png" alt="Sahil" style="width:100%">
+      <img src="static/images/sahil.png" alt="Sahil" style="width:300px;height: 300px;border-radius: 100%;vertical-align: middle;">
       <h3>Sahil Rahi</h3>
-      <p class="w3-opacity">BCD</p>
+      <p class="w3-opacity">AWS Cloud Certified Engineer</p>
       <p> Email: C0761268@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href="https://www.linkedin.com/in/sahilrahi/" target="_top">LinkedIn </a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/harjot.png" alt="Harjot" style="width:100%">
+      <img src="static/images/harjot.png" alt="Harjot" style="width:300px;height: 300px;border-radius: 100%;vertical-align: middle;">
       <h3>Harjot Kaur</h3>
-      <p class="w3-opacity">Architect</p>
+      <p class="w3-opacity">Cloud Engineer</p>
       <p>Email: c0757913@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href="https://www.linkedin.com/in/harjot-kaur-028508172/" target="_top">LinkedIn </a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/brimderdeep.jpg" alt="Brinderdeep" style="width:100%">
+      <img src="static/images/brimderdeep.jpg" alt="Brinderdeep" style="width:300px;height: 300px;border-radius: 100%;vertical-align: middle;">
       <h3>Brinderdeep Kaur</h3>
-      <p class="w3-opacity">Architect</p>
+      <p class="w3-opacity">Cloud Engineer</p>
       <p>Email: C0761444@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href="https://www.linkedin.com/in/brinderdeep-kaur-774427191/" target="_top">LinkedIn </a>
     </div>
     
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="static/images/simranpreet.png" alt="Brinderdeep" style="width:100%">
+      <img src="static/images/simranpreet.png" alt="Brinderdeep" style="width:300px;height: 300px;border-radius: 100%;vertical-align: middle;">
       <h3>Simranpreet Kaur</h3>
-      <p class="w3-opacity">Architect</p>
+      <p class="w3-opacity">Cloud Engineer</p>
       <p>Email: C0761245@mylambton.ca. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href="https://www.linkedin.com/in/simran-kaur-09192b192/" target="_top">LinkedIn </a>
     </div>
   </div>
 
@@ -284,7 +285,7 @@ for(Cookie cookie : cookies){
   
 <!-- Image of location/map -->
 <div class="w3-container">
-  <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
+  <img src="static/images/map.PNG" class="w3-image" style="width:100%">
 </div>
 
 <!-- End page content -->
