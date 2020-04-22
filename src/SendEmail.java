@@ -12,7 +12,7 @@ public class SendEmail {
 
 	private String SMTP_HOST ="smtp.gmail.com";
 	private String FROM_ADDRESS ="troesbess1@gmail.com";
-	private String PASSWORD ="energystorage";
+	private String PASSWORD ="xxxx";
 	private String FROM_NAME="The Cuong Bui";
 	
 	public boolean sendMail(String[] recepients, String[] bccRecepients, String subject,String message)
